@@ -572,7 +572,7 @@
         document.querySelector(`#${modal}`).open();
       });
     });
-    document.querySelectorAll('.fg-modal .cancel-button button').forEach(el => {
+    document.querySelectorAll('.fg-modal .cancel-subscription-button button').forEach(el => {
       el.addEventListener('click', (e) => {
         const modal = e.target.closest('.fg-modal');
         modal.close();
