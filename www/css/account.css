@@ -79,6 +79,7 @@ body.theme-b {
   }
 
   .subhed {
+    padding: 3rem;
     margin-left: 1.5rem;
   }
 
@@ -122,6 +123,7 @@ body.theme-b {
 
 .card {
   align-items: flex-start;
+  padding: 3rem;
 }
 
 .edit-button button {
