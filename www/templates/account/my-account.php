@@ -25,7 +25,7 @@
     <?php endif; ?>
   </div>
 
-  <div class="card contact-info" data-modal="contact-info-modal">
+  <div class="box card contact-info" data-modal="contact-info-modal">
     <div class="card-section">
       <h3><?= htmlspecialchars($first_name) . ' ' . htmlspecialchars($last_name) ?></h3>
       <div class="info">
@@ -39,7 +39,7 @@
     </div>
   </div>
 
-  <div class="card password" data-modal="password-modal">
+  <div class="box card password" data-modal="password-modal">
     <div class="card-section">
       <h3>Password</h3>
       <div class="info">
