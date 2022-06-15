@@ -62,7 +62,8 @@ require_once __DIR__ . '/google-tag-manager.inc';
     } elseif (file_exists(__DIR__ . '/../../settings/customhead.inc.php')) { include(__DIR__ . '/../../settings/customhead.inc.php');
     }
 ?>
-
+<link rel="stylesheet" href="<?= "{$GLOBALS['cdnPath']}/css/typography.css?v=" . constant('VER_TYPOGRAPHY_CSS') ?>" />
+<link rel="stylesheet" href="<?= "{$GLOBALS['cdnPath']}/css/layout.css?v=" . constant('VER_LAYOUT_CSS') ?>" />
 <link rel="stylesheet" href="<?= "{$GLOBALS['cdnPath']}/pagestyle2.css?v=" . constant('VER_CSS') ?>" />
 <link rel="stylesheet" href="<?= "{$GLOBALS['cdnPath']}/wpt-header.css?v=" . constant('VER_HEADER_CSS') ?>" />
 <script src="<?= "{$GLOBALS['cdnPath']}/wpt-header.js?v=" . constant('VER_JS') ?>" defer></script>
