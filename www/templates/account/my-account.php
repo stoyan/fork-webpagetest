@@ -48,7 +48,7 @@
         </div>
 
         <!-- account settings tab -->
-        <div class="tab-content">
+        <div class="tab-content" id="account-settings-content">
             <div class="box card contact-info" data-modal="contact-info-modal">
                 <div class="card-section user-info">
                     <span class="dot"><?= htmlspecialchars($first_name)[0] . ' ' . htmlspecialchars($last_name)[0] ?> </span>
@@ -122,7 +122,7 @@
 
         <!-- PAYING ONLY: Billing Invoice tab -->
         <?php if ($is_paid) : ?>
-            <div class="tab-content">
+            <div class="tab-content" id="billing-settings-content">
                 <?php if ($is_paid) {
                     include_once __DIR__ . '/includes/billing-data.php';
                     include_once __DIR__ . '/includes/modals/payment-info.php';
@@ -135,7 +135,7 @@
 
         <!-- PAYING ONLY:  API tab -->
         <?php if ($is_paid) : ?>
-            <div class="tab-content">
+            <div class="tab-content" id="api-settings-content">
                 <div class="box card api-consumers">
                     <h3>API Consumers</h3>
                     <div class="create-key-container">
