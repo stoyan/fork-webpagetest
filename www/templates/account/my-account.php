@@ -81,10 +81,7 @@
             </div>
 
 
-            <!-- cancel subscription modals -->
-            <?php if ($is_paid) {
-                include_once __DIR__ . '/includes/modals/subscription-plan.php';
-            } ?>
+
 
             <div class="box card-section">
                 <h3>Current Plan</h3>
@@ -125,7 +122,6 @@
             <div class="tab-content" id="billing-settings-content">
                 <?php if ($is_paid) {
                     include_once __DIR__ . '/includes/billing-data.php';
-                    include_once __DIR__ . '/includes/modals/payment-info.php';
                 } else {
                     include_once __DIR__ . '/includes/signup.php';
                 } ?>
@@ -222,6 +218,11 @@
 
 
 <!-- Modals -->
+<!-- cancel subscription modals -->
+<?php if ($is_paid) {
+    include_once __DIR__ . '/includes/modals/subscription-plan.php';
+    include_once __DIR__ . '/includes/modals/payment-info.php';
+} ?>
 <?php
 include_once __DIR__ . '/includes/modals/contact-info.php';
 include_once __DIR__ . '/includes/modals/password.php';
