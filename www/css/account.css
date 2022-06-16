@@ -87,6 +87,20 @@ body.theme-b {
   align-items: flex-start;
 }
 
+.card .card-section-subhed {
+  border-bottom: 1px solid #C8C8C8;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  padding-bottom: 10px;
+}
+
+.status {
+  background-color: #C7EDBC;
+  padding: 0 10px;
+}
 
 .contact-support-button a {
   display: flex;
@@ -1727,15 +1741,49 @@ ul.bulleted-list {
   border-radius: 100px;
   display: flex;
   justify-content: center;
-  width:60px;
+  width: 60px;
   height: 60px;
   align-items: center;
   font-weight: 700;
-  font-size: 	1.25rem;
+  font-size: 1.25rem;
+  margin-right: 20px;
+  margin-top: 15px;
 }
+
 .user-info {
   display: flex;
   flex-direction: row;
   justify-content: normal;
   align-items: flex-start;
+}
+
+/** Account tabs **/
+.tab-labels {
+  border-bottom: 2px solid rgb(0 0 0 / 20%);
+  margin-bottom: 30px;
+}
+
+.tabs-container .tab-content {
+  display: none;
+}
+
+/** display the content functionality **/
+.tabs-container input[type="radio"]:nth-of-type(0):checked~.tab-content:nth-of-type(0),
+.tabs-container input[type="radio"]:nth-of-type(1):checked~.tab-content:nth-of-type(1),
+.tabs-container input[type="radio"]:nth-of-type(2):checked~.tab-content:nth-of-type(2) {
+  display: block;
+}
+
+.tabs-container input[type="radio"]:nth-of-type(0):checked~.tab-labels label:nth-of-type(0),
+.tabs-container input[type="radio"]:nth-of-type(1):checked~.tab-labels label:nth-of-type(1),
+.tabs-container input[type="radio"]:nth-of-type(2):checked~.tab-labels label:nth-of-type(2) {
+  font-weight: 700;
+  border-bottom: 3px solid #F9D856;
+}
+
+.tabs-container~input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
 }
