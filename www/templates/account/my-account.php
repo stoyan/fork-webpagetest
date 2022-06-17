@@ -121,7 +121,7 @@
         <?php if ($is_paid) : ?>
             <div class="tab-content" id="billing-settings-content">
                 <?php if ($is_paid) {
-                    include_once __DIR__ . '/includes/billing/invoice-history.php';
+                    include_once __DIR__ . '/billing/invoice-history.php';
                 } else {
                     include_once __DIR__ . '/includes/signup.php';
                 } ?>
