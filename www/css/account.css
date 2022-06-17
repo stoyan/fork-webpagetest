@@ -179,10 +179,12 @@ body.theme-b {
 
 .modal {
   visibility: hidden;
+  display: none;
 }
 
 .modal-open {
   visibility: visible;
+  display: block;
 }
 
 .modal-open+.modal_screen {
