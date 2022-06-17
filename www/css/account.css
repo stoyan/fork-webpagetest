@@ -882,7 +882,13 @@ a.button {
 }
 
 .api-consumers .info {
-  overflow: scroll;
+  overflow: hidden;
+}
+
+@media (max-width: 760px) {
+  .api-consumers .info {
+    overflow: scroll;
+  }
 }
 
 
@@ -1803,4 +1809,14 @@ ul.bulleted-list {
   border: 1px solid #C8C8C8;
   border-radius: 6px;
   padding: 1em;
+}
+
+.box.api-consumers {
+  padding: 1em 0;
+}
+
+.box.api-consumers>h3,
+.box.api-consumers>.info,
+.box.api-consumers>.create-key-container>div {
+  padding: 0 2em;
 }
