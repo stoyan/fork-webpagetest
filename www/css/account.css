@@ -1765,6 +1765,10 @@ ul.bulleted-list {
   margin-bottom: 30px;
 }
 
+.tab-labels label:not(:first-of-type) {
+  margin-left: 2em;
+}
+
 .tabs-container .tab-content {
   display: none;
 }
@@ -1788,4 +1792,12 @@ ul.bulleted-list {
   opacity: 0;
   top: 0;
   left: 0;
+}
+
+
+.payment-info {
+  background: #F4F4F4;
+  border: 1px solid #C8C8C8;
+  border-radius: 6px;
+  padding: 1em;
 }
