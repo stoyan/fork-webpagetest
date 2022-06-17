@@ -1748,7 +1748,6 @@ ul.bulleted-list {
   align-items: center;
   font-weight: 700;
   font-size: 1.25rem;
-  margin-right: 20px;
   margin-top: 15px;
 }
 
@@ -1757,6 +1756,10 @@ ul.bulleted-list {
   flex-direction: row;
   justify-content: normal;
   align-items: flex-start;
+}
+
+.user-info .image {
+  margin-right: 20px;
 }
 
 /** Account tabs **/

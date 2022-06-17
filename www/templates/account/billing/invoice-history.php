@@ -2,7 +2,7 @@
     <h2>Payment &amp; Invoices</h2>
     <div class="card payment-info" data-modal="payment-info-modal">
         <div class="card-section user-info">
-            <div class="cc-type">
+            <div class="cc-type image">
                 <img src="<?= $braintreeCustomerDetails['ccImageUrl'] ?>" alt="card-type" width="80px" height="54px" />
             </div>
             <div class="cc-details">

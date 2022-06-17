@@ -51,7 +51,7 @@
         <div class="tab-content" id="account-settings-content">
             <div class="box card contact-info" data-modal="contact-info-modal">
                 <div class="card-section user-info">
-                    <span class="dot"><?= htmlspecialchars($first_name)[0] . ' ' . htmlspecialchars($last_name)[0] ?> </span>
+                    <span class="dot image"><?= htmlspecialchars($first_name)[0] . ' ' . htmlspecialchars($last_name)[0] ?> </span>
                     <div>
                         <h3><?= htmlspecialchars($first_name) . ' ' . htmlspecialchars($last_name) ?></h3>
                         <div class="info">
