@@ -152,7 +152,7 @@
                     </div>
                     <div class="info">
                         <form method='POST' action='/account'>
-                            <table class="sortable responsive-vertical-table">
+                            <table class="sortable responsive-vertical-table selectable-table">
                                 <caption>
                                     <span class="sr-only">API Consumers table, column headers with buttons are sortable.</span>
                                 </caption>
