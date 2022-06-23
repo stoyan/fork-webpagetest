@@ -181,9 +181,24 @@ if ($request_method === 'POST') {
         unset($_SESSION['client-error']);
     }
 
+
     $tpl = new Template('account');
     $tpl->setLayout('account');
-    echo $tpl->render('my-account', $results);
+    switch ($page) {
+        case 'billing':
+            echo $tpl->render('billing/billing-cycle', $results);
+            break;
+        case 'upgrade':
+            echo $tpl->render('plans/upgrade-plan', $results);
+            break;
+        case 'summary':
+            echo $tpl->render('plans/plan-summary', $results);
+            break;
+        default:
+            echo $tpl->render('my-account', $results);
+            break;
+    }
+
     exit();
 } else {
     throw new ClientException("HTTP Method not supported for this endpoint", "/");

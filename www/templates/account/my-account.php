@@ -93,7 +93,10 @@
                         <?php else : ?>
                             <span class="status"><?= $braintreeCustomerDetails['status']; ?></span>
                         <?php endif; ?>
+
+                        <a href="/account/upgrade_plan" class="button">Change Plan</a>
                     </div>
+
                     <ul>
                         <li><strong>Runs per month:</strong> 50</li>
                         <li><strong>Remaining runs:</strong> <?= $braintreeCustomerDetails['remainingRuns'] ?> </li>
@@ -106,6 +109,7 @@
                     <div class="card-section-subhed">
                         Starter
                         <span class="status">Active</span>
+                        <a href="/account/upgrade_plan" class="button">Upgrade Plan</a>
                     </div>
                     <ul>
                         <li><strong>Runs per month:</strong> 50</li>
@@ -224,7 +228,7 @@ include_once __DIR__ . '/includes/modals/contact-info.php';
 include_once __DIR__ . '/includes/modals/password.php';
 ?>
 <?php if ($is_paid) {
-    include_once __DIR__ . '/includes/modals/subscription-plan.php';
+    include_once __DIR__ . '/includes/modals/cancel-subscription.php';
     include_once __DIR__ . '/includes/modals/payment-info.php';
 } ?>
 <!-- /Modals -->
