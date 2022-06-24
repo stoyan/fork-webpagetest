@@ -180,18 +180,19 @@ if ($request_method === 'POST') {
         $results['error_message'] = $error_message;
         unset($_SESSION['client-error']);
     }
-
+    $page = (string) filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);
+    $results['pagefoo'] = isset($page)? $page: 'test';
 
     $tpl = new Template('account');
     $tpl->setLayout('account');
     switch ($page) {
-        case 'billing':
+        case 'update_billing':
             echo $tpl->render('billing/billing-cycle', $results);
             break;
-        case 'upgrade':
+        case 'upgrade_plan':
             echo $tpl->render('plans/upgrade-plan', $results);
             break;
-        case 'summary':
+        case 'plan_summary':
             echo $tpl->render('plans/plan-summary', $results);
             break;
         default:
