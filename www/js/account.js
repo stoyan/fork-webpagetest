@@ -110,8 +110,6 @@
       this.dispatchEvent(this.openEvent);
     }
 
-
-
     close(programmedClose) {
       var self = this;
       this.dispatchEvent(this.beforeCloseEvent);
@@ -136,10 +134,8 @@
       }
     }
 
-
     bindEvents() {
       var self = this;
-
       // close btn click
       this.closeBtn.addEventListener('click', event => self.close());
 
@@ -540,6 +536,13 @@
           modal.close();
         });
       });
+
+      document.querySelectorAll('#wpt-account-upgrade-choose input[name="plan"]').forEach(s => {
+        s.addEventListener('change', e => {
+          document.selectPlan.submit();
+        })
+      });
+
       document.querySelectorAll('.fg-modal .cancel-subscription-button button').forEach(el => {
         el.addEventListener('click', (e) => {
           const modal = e.target.closest('.fg-modal');
