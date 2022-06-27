@@ -542,7 +542,7 @@
           const buttons = document.querySelectorAll('.pill-button span');
           for (const button of buttons) {
             button.innerHTML = '';
-            button.classList.add('dot-flashing');
+            button.classList.add('dot-pulse');
           }
           document.selectPlan.submit();
         })

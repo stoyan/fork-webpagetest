@@ -61,57 +61,88 @@ TODO update the NEW buttons on signup to this green
 
 /**
  * ==============================================
- * Dot Flashing - for form submit
+ * Dot Pulse
  * ==============================================
  */
-.dot-flashing {
+.dot-pulse {
   position: relative;
+  left: -9999px;
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
-  animation: dotFlashing 1s infinite linear alternate;
-  animation-delay: .5s;
+  background-color: #141E33;
+  color: #141E33;
+  box-shadow: 9999px 0 0 -5px #141E33;
+  animation: dotPulse 1.5s infinite linear;
+  animation-delay: .25s;
 }
 
-.dot-flashing::before,
-.dot-flashing::after {
+.dot-pulse::before,
+.dot-pulse::after {
   content: '';
   display: inline-block;
   position: absolute;
   top: 0;
-}
-
-.dot-flashing::before {
-  left: -15px;
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
-  animation: dotFlashing 1s infinite alternate;
+  background-color: #141E33;
+  color: #141E33;
+}
+
+.dot-pulse::before {
+  box-shadow: 9984px 0 0 -5px #141E33;
+  animation: dotPulseBefore 1.5s infinite linear;
   animation-delay: 0s;
 }
 
-.dot-flashing::after {
-  left: 15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
-  animation: dotFlashing 1s infinite alternate;
-  animation-delay: 1s;
+.dot-pulse::after {
+  box-shadow: 10014px 0 0 -5px #141E33;
+  animation: dotPulseAfter 1.5s infinite linear;
+  animation-delay: .5s;
 }
 
-@keyframes dotFlashing {
+@keyframes dotPulseBefore {
   0% {
-    background-color: #9880ff;
+    box-shadow: 9984px 0 0 -5px #141E33;
   }
 
-  50%,
+  30% {
+    box-shadow: 9984px 0 0 2px #141E33;
+  }
+
+  60%,
   100% {
-    background-color: #ebe6ff;
+    box-shadow: 9984px 0 0 -5px #141E33;
+  }
+}
+
+@keyframes dotPulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px #141E33;
+  }
+
+  30% {
+    box-shadow: 9999px 0 0 2px #141E33;
+  }
+
+  60%,
+  100% {
+    box-shadow: 9999px 0 0 -5px #141E33;
+  }
+}
+
+@keyframes dotPulseAfter {
+  0% {
+    box-shadow: 10014px 0 0 -5px #141E33;
+  }
+
+  30% {
+    box-shadow: 10014px 0 0 2px #141E33;
+  }
+
+  60%,
+  100% {
+    box-shadow: 10014px 0 0 -5px #141E33;
   }
 }
