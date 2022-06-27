@@ -1,5 +1,5 @@
 <div class="my-account-page page_content">
-<h3><?= htmlspecialchars($pagefoo)?></h3>
+    <h3><?= htmlspecialchars($pagefoo) ?></h3>
     <!-- VERIFIED EMAIL NOTICE ---->
     <?php if (!$is_verified) : ?>
         <div class="resend-email-verification-container">
@@ -104,7 +104,7 @@
                         <li><strong>Run renewal:</strong> date here</li>
                         <li><strong>Price:</strong> <?= $braintreeCustomerDetails['subscriptionPrice'] ?></li>
                         <li><strong>Billing Cycle:</strong> <?= $billing_frequency ?></li>
-                        <li><strong>Plan Renewal:</strong> <?= $runs_renewa ?></li>
+                        <li><strong>Plan Renewal:</strong> <?= $runs_renewal ?></li>
                     </ul>
                 <?php else : ?>
                     <div class="card-section-subhed">

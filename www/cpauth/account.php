@@ -66,6 +66,17 @@ if ($request_method === 'POST') {
             error_log($e->getMessage());
             throw new ClientException($e->getMessage(), "/account");
         }
+    } elseif ($type == "upgrade-plan-1") {
+        $body = AccountHandler::validateUpgradeStepOne();
+        $redirect_uri = AccountHandler::postStepOne($request_context);
+
+        $host = Util::getSetting('host');
+        setcookie('upgrade-plan', $body->plan, time() + (5 * 60), "/", $host);
+
+        header("Location: {$redirect_uri}");
+        exit();
+    } elseif ($type == "upgrade-plan-2") {
+        exit();
     } elseif ($type == "delete-api-key") {
         AccountHandler::deleteApiKey($request_context);
     } elseif ($type == "resend-verification-email") {
@@ -181,7 +192,7 @@ if ($request_method === 'POST') {
         unset($_SESSION['client-error']);
     }
     $page = (string) filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);
-    $results['pagefoo'] = isset($page)? $page: 'test';
+    $results['pagefoo'] = isset($page) ? $page : 'test';
 
     $tpl = new Template('account');
     $tpl->setLayout('account');
