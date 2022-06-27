@@ -36,7 +36,7 @@ class Account
     {
         $host = Util::getSetting('host');
         $protocol = $request_context->getUrlProtocol();
-        $redirect_uri = "{$protocol}://{$host}/account/plan_summmary";
+        $redirect_uri = "{$protocol}://{$host}/account/plan_summary";
         return $redirect_uri;
     }
 

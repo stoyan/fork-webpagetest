@@ -1,4 +1,17 @@
 <div class="my-account-page page_content">
+    <ul class="breadcrumbs">
+        <li><a href="/account">Account Settings</a></li>
+        <li> Update Plan</li>
+    </ul>
+    <!-- Page Subheader -->
+    <div class="subhed">
+        <h1>Update Plan</h1>
+        <?php if ($is_paid) : ?>
+            <div class="contact-support-button">
+                <a href="https://support.webpagetest.org"><span>Contact Support</span></a>
+            </div>
+        <?php endif; ?>
+    </div>
     <form id="wpt-account-upgrade-choose" method="post" name="selectPlan" action="/account">
         <input type='hidden' name='type' value='upgrade-plan-1' />
         <h3>Save 20% by paying annually!</h3>

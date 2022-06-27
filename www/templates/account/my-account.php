@@ -95,7 +95,7 @@
                             <span class="status"><?= $braintreeCustomerDetails['status']; ?></span>
                         <?php endif; ?>
 
-                        <a href="/account/upgrade_plan" class="button">Change Plan</a>
+                        <a href="/account/upgrade_plan" class="pill-button yellow">Change Plan</a>
                     </div>
 
                     <ul>
@@ -110,7 +110,7 @@
                     <div class="card-section-subhed">
                         Starter
                         <span class="status">Active</span>
-                        <a href="/account/upgrade_plan" class="button">Upgrade Plan</a>
+                        <a href="/account/upgrade_plan" class="pill-button yellow">Upgrade Plan</a>
                     </div>
                     <ul>
                         <li><strong>Runs per month:</strong> 50</li>
