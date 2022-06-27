@@ -537,8 +537,10 @@
         });
       });
 
-      document.querySelectorAll('#wpt-account-upgrade-choose input[name="plan"]').forEach(s => {
-        s.addEventListener('change', e => {
+      document.querySelectorAll('#wpt-account-upgrade-choose input[name="plan"]').forEach(el => {
+        el.addEventListener('change', e => {
+          const button = e.target.closest('.pill-button');
+          button.classList.add('dot-flashing');
           document.selectPlan.submit();
         })
       });
