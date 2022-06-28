@@ -200,10 +200,8 @@ if ($request_method === 'POST') {
         case 'update_billing':
             echo $tpl->render('billing/billing-cycle', $results);
             break;
-        case 'upgrade_plan':
-
+        case 'update_plan':
             echo $tpl->render('plans/upgrade-plan', $results);
-
         case 'plan_summary':
             $planCookie = $_COOKIE['upgrade-plan'];
             if (isset($planCookie) && $planCookie) {
