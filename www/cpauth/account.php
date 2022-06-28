@@ -205,13 +205,15 @@ if ($request_method === 'POST') {
             echo $tpl->render('plans/upgrade-plan', $results);
 
         case 'plan_summary':
-            $planCookie = Util::getCookieName('upgrade-plan');
-            if (isset($planCookie)) {
+            $planCookie = $_COOKIE['upgrade-plan'];
+            if (isset($planCookie) && $planCookie) {
                 $results['plan'] = $planCookie;
                 echo $tpl->render('plans/plan-summary', $results);
                 break;
             } else {
+
                 throw new ClientException("No plan chosen", $request->getRequestUri());
+                break;
             }
         default:
             echo $tpl->render('my-account', $results);
