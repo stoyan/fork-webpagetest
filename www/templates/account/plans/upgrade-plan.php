@@ -14,7 +14,7 @@
     </div>
     <form id="wpt-account-upgrade-choose" method="post" name="selectPlan" action="/account">
         <input type='hidden' name='type' value='upgrade-plan-1' />
-        <h3>Save 20% by paying annually!</h3>
+        <p class="h3 center-banner">Save 20% by paying annually!</p>
         <fieldset class="wpt-plans radiobutton-tab-container">
             <legend for="pro-plan-selector" class="visually-hidden"> Choose payment plan frequency:</legend>
             <input id="annual-plans" type="radio" name="plans" value="annual" checked />
