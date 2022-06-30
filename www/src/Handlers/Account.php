@@ -26,7 +26,7 @@ class Account
     {
         if (isset($_POST['plan'])) {
             $vars = (object)[];
-            $vars->plan =  htmlentities($_POST['plan']);
+            $vars->plan =  filter_input(INPUT_POST, 'plan');
             return $vars;
         } else {
             throw new ClientException("No plan selected", "/account", 400);
@@ -41,20 +41,21 @@ class Account
         return $redirect_uri;
     }
 
-    // before rendering the plan_
-    public static function getPlanSummary(RequestContext $request_context, array $vars): string
+    // // before rendering the plan_
+    // public static function getPlanSummary(RequestContext $request_context, array $vars): string
 
-    }
+    // }
 
-    // validate the last step to upgrading
-    public static function validatePlanSummary(): object
-    {
-    }
+    // // validate the last step to upgrading
+    // public static function validatePlanSummary(RequestContext $request_context): object
+    // {
+    //     subscribeToAccount($request_context)
+    // }
 
-    // Submit the plan upgrade
-    public static function postUpdatePlanSummary(RequestContext $request_context): string
-    {
-    }
+    // // Submit the plan upgrade
+    // public static function postUpdatePlanSummary(RequestContext $request_context): string
+    // {
+    // }
 
 
 

@@ -61,8 +61,7 @@
             </div>
         </fieldset>
         <div class="card">
-            <div>Looking to run more than 20,000 tests in a month?</div>
-            <div><a href=" https://www.product.webpagetest.org/contact">Contact Us</a></div>
+            <div><a href=" https://www.product.webpagetest.org/contact">Need more runs? Let's Talk</a></div>
         </div>
 
         <input type='hidden' name='csrf_token' value='<?= $csrf_token ?>' />

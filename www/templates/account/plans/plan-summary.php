@@ -94,7 +94,7 @@
                     </div> <!-- /.billing-info-section -->
                 </div> <!-- /.billing-container -->
             </div> <!-- /.plan-billing-container -->
-            <input type="hidden" name="plan" value="<?= $plan['id'] ?>" />
+            <input type="hidden" name="plan" value="<?= $plan ?>" />
             <input type="hidden" name="nonce" id="hidden-nonce-input" required />
             <input type="hidden" name="type" value="account-signup" required />
             <input type="hidden" name="csrf_token" value="<?= $csrf_token; ?>" />

@@ -67,8 +67,8 @@ if ($request_method === 'POST') {
             throw new ClientException($e->getMessage(), "/account");
         }
     } elseif ($type == "upgrade-plan-1") {
-        $body = AccountHandler::validateUpgradeStepOne();
-        $redirect_uri = AccountHandler::postStepOne($request_context);
+        $body = AccountHandler::validatePlanUpgrade();
+        $redirect_uri = AccountHandler::postPlanUpgrade($request_context);
 
         $host = Util::getSetting('host');
         setcookie('upgrade-plan', $body->plan, time() + (5 * 60), "/", $host);
@@ -76,7 +76,7 @@ if ($request_method === 'POST') {
         header("Location: {$redirect_uri}");
         exit();
     } elseif ($type == "upgrade-plan-2") {
-        exit();
+        AccountHandler::subscribeToAccount($request_context);
     } elseif ($type == "delete-api-key") {
         AccountHandler::deleteApiKey($request_context);
     } elseif ($type == "resend-verification-email") {
@@ -202,6 +202,7 @@ if ($request_method === 'POST') {
             break;
         case 'update_plan':
             echo $tpl->render('plans/upgrade-plan', $results);
+            break;
         case 'plan_summary':
             $planCookie = $_COOKIE['upgrade-plan'];
             if (isset($planCookie) && $planCookie) {
@@ -209,7 +210,6 @@ if ($request_method === 'POST') {
                 echo $tpl->render('plans/plan-summary', $results);
                 break;
             } else {
-
                 throw new ClientException("No plan chosen", $request->getRequestUri());
                 break;
             }
