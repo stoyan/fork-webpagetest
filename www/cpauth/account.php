@@ -150,36 +150,35 @@ if ($request_method === 'POST') {
         $billing_info['is_canceled'] = str_contains($customer_details['status'], 'CANCEL');
         $billing_info['billing_frequency'] = $billing_frequency;
         $client_token = $billing_info['braintreeClientToken'];
-    } else {
-        $info = $request_context->getClient()->getUnpaidAccountpageInfo();
-        $client_token = $info['braintreeClientToken'];
-        $plans = $info['wptPlans'];
-        $annual_plans = array();
-        $monthly_plans = array();
-        usort($plans, function ($a, $b) {
-            if ($a['price'] == $b['price']) {
-                return 0;
-            }
-            return ($a['price'] < $b['price']) ? -1 : 1;
-        });
-        foreach ($plans as $plan) {
-            if ($plan['billingFrequency'] == 1) {
-                $plan['price'] = number_format(($plan['price']), 2, ".", ",");
-                $plan['annual_price'] = number_format(($plan['price'] * 12.00), 2, ".", ",");
-                $monthly_plans[] = $plan;
-            } else {
-                $plan['annual_price'] = number_format(($plan['price']), 2, ".", ",");
-                $plan['monthly_price'] = number_format(($plan['price'] / 12.00), 2, ".", ",");
-                $annual_plans[] = $plan;
-            }
-        }
-        $billing_info = array(
-            'annual_plans' => $annual_plans,
-            'monthly_plans' => $monthly_plans
-        );
     }
+    $info = $request_context->getClient()->getUnpaidAccountpageInfo();
+    $client_token = $info['braintreeClientToken'];
+    $plans = $info['wptPlans'];
+    $annual_plans = array();
+    $monthly_plans = array();
+    usort($plans, function ($a, $b) {
+        if ($a['price'] == $b['price']) {
+            return 0;
+        }
+        return ($a['price'] < $b['price']) ? -1 : 1;
+    });
+    foreach ($plans as $plan) {
+        if ($plan['billingFrequency'] == 1) {
+            $plan['price'] = number_format(($plan['price']), 2, ".", ",");
+            $plan['annual_price'] = number_format(($plan['price'] * 12.00), 2, ".", ",");
+            $monthly_plans[] = $plan;
+        } else {
+            $plan['annual_price'] = number_format(($plan['price']), 2, ".", ",");
+            $plan['monthly_price'] = number_format(($plan['price'] / 12.00), 2, ".", ",");
+            $annual_plans[] = $plan;
+        }
+    }
+    $plansList = array(
+        'annual_plans' => $annual_plans,
+        'monthly_plans' => $monthly_plans
+    );
 
-    $results = array_merge($contact_info, $billing_info);
+    $results = array_merge($contact_info, $billing_info, $plansList);
     $results['csrf_token'] = $_SESSION['csrf_token'];
     $results['validation_pattern'] = ValidatorPatterns::getContactInfo();
     $results['validation_pattern_password'] = ValidatorPatterns::getPassword();
